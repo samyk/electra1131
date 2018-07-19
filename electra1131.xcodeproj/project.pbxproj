@@ -595,7 +595,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git log -50 --pretty=format:\"%H\" --no-patch > \"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/githistory.txt\"";
+			shellScript = "if type xklgit > /dev/null && git rev-parse; then (git log -50 --pretty=format:\"%H\" --no-patch > \"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/githistory.txt\"); fi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
